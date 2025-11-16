@@ -29,7 +29,7 @@ export default function Hero() {
     <div className="max-w-7xl mx-auto">
       <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-center">
         {/* Left Column - Text Content */}
-        <div className="text-center lg:text-left space-y-8 animate-fade-in">
+        <div className="text-center lg:text-left space-y-8 opacity-0 animate-[fadeIn_1s_ease-out_forwards]">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-emerald-500/10 border border-emerald-500/30 backdrop-blur-sm">
             <div className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></div>
@@ -40,7 +40,7 @@ export default function Hero() {
           <h1 className="text-4xl sm:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
             <span className="text-white">Predict the</span>
             <br />
-            <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent animate-gradient">
+            <span className="bg-gradient-to-r from-emerald-400 via-cyan-400 to-purple-400 bg-clip-text text-transparent bg-[length:200%_200%] animate-[gradient_3s_ease_infinite]">
               Unpredictable Sky
             </span>
           </h1>
@@ -172,12 +172,12 @@ export default function Hero() {
             </div>
 
             {/* Floating Stats Cards */}
-            <div className="absolute -left-8 top-1/4 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 backdrop-blur-xl rounded-xl border border-emerald-500/30 p-4 shadow-lg animate-float">
+            <div className="absolute -left-8 top-1/4 bg-gradient-to-br from-emerald-500/20 to-cyan-500/20 backdrop-blur-xl rounded-xl border border-emerald-500/30 p-4 shadow-lg animate-bounce">
               <div className="text-2xl font-bold text-white">92%</div>
               <div className="text-xs text-gray-300">Accuracy Rate</div>
             </div>
 
-            <div className="absolute -right-8 bottom-1/4 bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-xl border border-purple-500/30 p-4 shadow-lg animate-float" style={{ animationDelay: '1s' }}>
+            <div className="absolute -right-8 bottom-1/4 bg-gradient-to-br from-purple-500/20 to-pink-500/20 backdrop-blur-xl rounded-xl border border-purple-500/30 p-4 shadow-lg animate-bounce" style={{ animationDelay: '1s' }}>
               <div className="text-2xl font-bold text-white">15min</div>
               <div className="text-xs text-gray-300">Update Interval</div>
             </div>
@@ -206,31 +206,6 @@ export default function Hero() {
       </div>
     </div>
   </div>
-
-  <style jsx>{`
-    @keyframes gradient {
-      0%, 100% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-    }
-    .animate-gradient {
-      background-size: 200% 200%;
-      animation: gradient 3s ease infinite;
-    }
-    @keyframes float {
-      0%, 100% { transform: translateY(0px); }
-      50% { transform: translateY(-10px); }
-    }
-    .animate-float {
-      animation: float 3s ease-in-out infinite;
-    }
-    @keyframes fade-in {
-      from { opacity: 0; transform: translateY(20px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-    .animate-fade-in {
-      animation: fade-in 1s ease-out;
-    }
-  `}</style>
 </div>
   );
 }
